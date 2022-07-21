@@ -1,0 +1,238 @@
+Sub FINALRP()
+'Je sais que c'est mal codé, c'est vraiment bourrin et "long" mais je prévoit déjà JeanMichel je sais pas l'utiliser, plus c'est bourrin plus ce sera simple de corriger au téléphone sans se prendre le crâne. 
+
+Selection.HomeKey Unit:=wdStory
+
+Dim p As Integer
+p = InputBox("Si vous préférez le format ''p. 1'', tapez 1. Si vous préférez ''p.1'', tapez 2.", "Format Page", 1)
+intVar = CInt(p)
+
+If p = 1 Then
+ 'Page1
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " p."
+    .Replacement.Text = " p. "
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+End If
+If p = 2 Then
+ 'Page2
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " p. "
+    .Replacement.Text = " p."
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+End If
+
+
+
+ 'Double Espace
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = "  "
+    .Replacement.Text = " "
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+
+ 'ESPACE POINT
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " ."
+    .Replacement.Text = "."
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'ESPACE Virgule
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " ,"
+    .Replacement.Text = ","
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec :
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " :"
+    .Replacement.Text = "^s:"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec1 :
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " :"
+    .Replacement.Text = "^s:"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec2 :
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " 2"
+    .Replacement.Text = "^s2"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec3 :
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " 3"
+    .Replacement.Text = "^s3"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec4 :
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " 4"
+    .Replacement.Text = "^s4"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec5 :
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " 5"
+    .Replacement.Text = "^s5"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec6 :
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " 6"
+    .Replacement.Text = "^s6"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec7
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " 7"
+    .Replacement.Text = "^s7"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec8
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " 8"
+    .Replacement.Text = "^s8"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec9
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " 9"
+    .Replacement.Text = "^s9"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Insec0
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " 0"
+    .Replacement.Text = "^s0"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+
+ 'Insec?
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " ?"
+    .Replacement.Text = "^s?"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'EspaceInsec
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = " ^s"
+    .Replacement.Text = "^s"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'DbleInsec
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = "^s^s"
+    .Replacement.Text = "^s"
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+ 'Double Espace2
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = "  "
+    .Replacement.Text = " "
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+
+End Sub
