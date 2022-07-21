@@ -1,6 +1,6 @@
 Sub FINALRP()
 Selection.HomeKey Unit:=wdStory
-
+'Je sais que c'est mal codé, c'est vraiment bourrin et "long" mais je prévoit déjà JeanMichel je sais pas l'utiliser, plus c'est bourrin plus ce sera simple de corriger au téléphone sans se prendre le crâne. 
 Dim p As Integer
 p = InputBox("Si vous préférez le format ''p. 1'', tapez 1. Si vous préférez ''p.1'', tapez 2.", "Format Page", 1)
 intVar = CInt(p)
