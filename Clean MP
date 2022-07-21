@@ -478,10 +478,10 @@ Wend
     'On passe tous les a priori en italique
    Selection.Find.ClearFormatting
     Selection.Find.Replacement.ClearFormatting
-    Selection.Find.Replacement.Font.Italic = True
+    Selection.Find.Replacement.Font.Italic = False
     With Selection.Find
-        .Text = " a priori "
-        .Replacement.Text = " a priori "
+        .Text = " "
+        .Replacement.Text = " "
         .Forward = True
         .Wrap = wdFindContinue
         .Format = True
@@ -492,8 +492,16 @@ Wend
         .MatchAllWordForms = False
     End With
     Selection.Find.Execute Replace:=wdReplaceAll
-    Msgbox ("Fin du traitement du corps du texte, cliquez sur ''Ok'' pour terminer ou lancer le traitement des notes de bas de page selon votre choix initial")
-    End if 
+
+   
+   
+   Msgbox ("Fin du traitement du corps du texte, cliquez sur ''Ok'' pour terminer ou lancer le traitement des notes de bas de page selon votre choix initial")
+   
+   
+   End if 
+    
+  
+    
     
     
     
@@ -512,8 +520,13 @@ Wend
     
 If p = 1 Then
  'Page1
-ActiveDocument.Range.Select
+     If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
+    Selection.Find.Replacement.Font.Italic = False
     .Text = " p."
     .Replacement.Text = " p. "
     .Forward = True
@@ -524,7 +537,11 @@ End With
 End If
 If p = 2 Then
  'Page2
-ActiveDocument.Range.Select
+     If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " p. "
     .Replacement.Text = " p."
@@ -538,7 +555,11 @@ End If
 '--
 
  'Suppression des doubles Espaces
-ActiveDocument.Range.Select
+     If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = "  "
     .Replacement.Text = " "
@@ -551,7 +572,11 @@ End With
 '--
 
 'Espace avant un point = on supprime l'espace
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " ."
     .Replacement.Text = "."
@@ -564,7 +589,11 @@ End With
 '--
 
  'Espace avant une virgule = on supprime l'espace
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " ,"
     .Replacement.Text = ","
@@ -577,7 +606,11 @@ End With
 '--
 
  'Espace avant deux points = insécable devant deux points
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " :"
     .Replacement.Text = "^s:"
@@ -590,7 +623,11 @@ End With
 '--
 
  'Espace avant un point virgule = insécable avant un point virgule
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " ;"
     .Replacement.Text = "^s;"
@@ -603,7 +640,11 @@ End With
 '--
 
  'Pas d'espace après un guillemet ouvrant = insécable après un guillement ouvrant
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = "«"
     .Replacement.Text = " «^s"
@@ -616,7 +657,11 @@ End With
 '--
 
  'Pas d'espace avant un guillemet fermant = insécable avant un guillement fermant
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = "»"
     .Replacement.Text = "^s» "
@@ -629,7 +674,11 @@ End With
 '--
 
  'Espace avant une parenthèse fermante : pas d'espace avant une parenthèse fermante
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " )"
     .Replacement.Text = ") "
@@ -642,7 +691,11 @@ End With
 '--
 
   'Espace après une parenthèse ouvrante : pas d'espace après une parenthèse ouvrante
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = "( "
     .Replacement.Text = " ("
@@ -655,7 +708,11 @@ End With
 '--
 
  'Espace avant un crochet fermant : pas d'espace avant un crochet fermant 
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " ]"
     .Replacement.Text = "] "
@@ -668,7 +725,11 @@ End With
 '--
 
   'Espace après un crochet ouvrant  : pas d'espace un crochet ouvrant
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = "[ "
     .Replacement.Text = " ["
@@ -682,7 +743,11 @@ End With
 
 'Remplacement des espaces avant les chiffres
  'Espace avant chiffre 1 = Insécable devant chiffre 1
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " :"
     .Replacement.Text = "^s:"
@@ -695,7 +760,11 @@ End With
 '--
 
  'Espace avant chiffre 2 = Insécable devant chiffre 2
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " 2"
     .Replacement.Text = "^s2"
@@ -708,7 +777,11 @@ End With
 '--
 
  'Espace avant chiffre 3 = Insécable devant chiffre 3
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " 3"
     .Replacement.Text = "^s3"
@@ -721,7 +794,11 @@ End With
 '--
 
  'Espace avant chiffre 4 = Insécable devant chiffre 4
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " 4"
     .Replacement.Text = "^s4"
@@ -734,7 +811,11 @@ End With
 '--
 
  'Espace avant chiffre 5 = Insécable devant chiffre 5
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " 5"
     .Replacement.Text = "^s5"
@@ -747,7 +828,11 @@ End With
 '--
 
  'Espace avant chiffre 6 = Insécable devant chiffre 6
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " 6"
     .Replacement.Text = "^s6"
@@ -760,7 +845,11 @@ End With
 '--
 
  'Espace avant chiffre 7= Insécable devant chiffre 7
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " 7"
     .Replacement.Text = "^s7"
@@ -773,7 +862,11 @@ End With
 '--
 
  'Espace avant chiffre 8 = Insécable devant chiffre 8
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " 8"
     .Replacement.Text = "^s8"
@@ -786,7 +879,11 @@ End With
 '--
 
  'Espace avant chiffre 9 = Insécable devant chiffre 9
-ActiveDocument.Range.Select
+ If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " 9"
     .Replacement.Text = "^s9"
@@ -799,7 +896,11 @@ End With
 '--
 
  'Espace avant chiffre 0= Insécable devant chiffre 0
-ActiveDocument.Range.Select
+  If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " 0"
     .Replacement.Text = "^s0"
@@ -812,7 +913,11 @@ End With
 '--
 
  'Espace avant un point d'interrogation = insécable devant un point d'interrogation
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " ?"
     .Replacement.Text = "^s?"
@@ -825,7 +930,11 @@ End With
 '--
 
  'Espace avant un insécable = insécable simple
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = " ^s"
     .Replacement.Text = "^s"
@@ -838,7 +947,11 @@ End With
 '--
 
  'Double insécable = Insécable simple
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = "^s^s"
     .Replacement.Text = "^s"
@@ -852,7 +965,11 @@ End With
 
  'Un autre petit coup de double espace, plusieurs fois pour éviter les problèmes
  While n<10
-ActiveDocument.Range.Select
+    If xDoc.Footnotes.Count > 0 Then
+        Set xRange = xDoc.Footnotes(1).Range
+        xRange.WholeStory
+        xRange.Select
+    End If
 With Selection.Find
     .Text = "  "
     .Replacement.Text = " "
