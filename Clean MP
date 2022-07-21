@@ -32,8 +32,14 @@ Selection.HomeKey Unit:=wdStory
 'Double insécable = Insécable simple
 'Un autre petit coup de double espace
 'Rajoutons un accent à Etat
+'Passage des Ibid. en italique
+'Passage des op. cit. en italique. 
+'Passage de "via" en italique
+'Passage de a priori en italique
 
 '----------
+Dim n =0
+
 
 ActiveDocument.Range.Select
  'Espace après un crochet ouvrant  : pas d'espace un crochet ouvrant
@@ -68,6 +74,7 @@ With Selection.Find
 End With
 End If
 
+'--
 
  'Suppression des doubles Espaces
 ActiveDocument.Range.Select
@@ -80,7 +87,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
 'Espace avant un point = on supprime l'espace
 ActiveDocument.Range.Select
@@ -93,7 +100,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant une virgule = on supprime l'espace
 ActiveDocument.Range.Select
@@ -106,7 +113,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant deux points = insécable devant deux points
 ActiveDocument.Range.Select
@@ -119,7 +126,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant un point virgule = insécable avant un point virgule
 ActiveDocument.Range.Select
@@ -132,7 +139,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Pas d'espace après un guillemet ouvrant = insécable après un guillement ouvrant
 ActiveDocument.Range.Select
@@ -145,7 +152,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Pas d'espace avant un guillemet fermant = insécable avant un guillement fermant
 ActiveDocument.Range.Select
@@ -158,7 +165,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant une parenthèse fermante : pas d'espace avant une parenthèse fermante
 ActiveDocument.Range.Select
@@ -171,7 +178,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
   'Espace après une parenthèse ouvrante : pas d'espace après une parenthèse ouvrante
 ActiveDocument.Range.Select
@@ -184,7 +191,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant un crochet fermant : pas d'espace avant un crochet fermant 
 ActiveDocument.Range.Select
@@ -197,7 +204,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
   'Espace après un crochet ouvrant  : pas d'espace un crochet ouvrant
 ActiveDocument.Range.Select
@@ -210,7 +217,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
 'Remplacement des espaces avant les chiffres
  'Espace avant chiffre 1 = Insécable devant chiffre 1
@@ -224,7 +231,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant chiffre 2 = Insécable devant chiffre 2
 ActiveDocument.Range.Select
@@ -237,7 +244,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant chiffre 3 = Insécable devant chiffre 3
 ActiveDocument.Range.Select
@@ -250,7 +257,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant chiffre 4 = Insécable devant chiffre 4
 ActiveDocument.Range.Select
@@ -263,7 +270,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant chiffre 5 = Insécable devant chiffre 5
 ActiveDocument.Range.Select
@@ -276,7 +283,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant chiffre 6 = Insécable devant chiffre 6
 ActiveDocument.Range.Select
@@ -289,7 +296,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant chiffre 7= Insécable devant chiffre 7
 ActiveDocument.Range.Select
@@ -302,7 +309,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant chiffre 8 = Insécable devant chiffre 8
 ActiveDocument.Range.Select
@@ -315,7 +322,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant chiffre 9 = Insécable devant chiffre 9
 ActiveDocument.Range.Select
@@ -328,7 +335,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant chiffre 0= Insécable devant chiffre 0
 ActiveDocument.Range.Select
@@ -341,7 +348,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant un point d'interrogation = insécable devant un point d'interrogation
 ActiveDocument.Range.Select
@@ -354,7 +361,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Espace avant un insécable = insécable simple
 ActiveDocument.Range.Select
@@ -367,7 +374,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
-
+'--
 
  'Double insécable = Insécable simple
 ActiveDocument.Range.Select
@@ -380,9 +387,10 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
+'--
 
-
- 'Un autre petit coup de double espace
+ 'Un autre petit coup de double espace, plusieurs fois pour éviter les problèmes
+ While n<10
 ActiveDocument.Range.Select
 With Selection.Find
     .Text = "  "
@@ -392,8 +400,10 @@ With Selection.Find
     .Wrap = wdFindContinue
     .Execute Replace:=wdReplaceAll
 End With
+n=n+1
+Wend
 
-
+'--
 
 ' Rajoutons un accent à Etat
 ActiveDocument.Range.Select
@@ -406,6 +416,84 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
+'--
 
+'On passe tous les Ibid en italique et on leur rajoute un point
+   Selection.Find.ClearFormatting
+    Selection.Find.Replacement.ClearFormatting
+    Selection.Find.Replacement.Font.Italic = True
+    With Selection.Find
+        .Text = "ibid"
+        .Replacement.Text = "Ibid."
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = True
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchWildcards = False
+        .MatchSoundsLike = False
+        .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+    
+    '--
+    
+    'On passe tous les op. cit. en italique
+   Selection.Find.ClearFormatting
+    Selection.Find.Replacement.ClearFormatting
+    Selection.Find.Replacement.Font.Italic = True
+    With Selection.Find
+        .Text = "op. cit."
+        .Replacement.Text = "op. cit."
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = True
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchWildcards = False
+        .MatchSoundsLike = False
+        .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+    
+    '--
 
+    'On passe tous les via en italique
+   Selection.Find.ClearFormatting
+    Selection.Find.Replacement.ClearFormatting
+    Selection.Find.Replacement.Font.Italic = True
+    With Selection.Find
+        .Text = " via "
+        .Replacement.Text = " via "
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = True
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchWildcards = False
+        .MatchSoundsLike = False
+        .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+    
+    '--
+    
+    'On passe tous les a priori en italique
+   Selection.Find.ClearFormatting
+    Selection.Find.Replacement.ClearFormatting
+    Selection.Find.Replacement.Font.Italic = True
+    With Selection.Find
+        .Text = " a priori "
+        .Replacement.Text = " a priori "
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = True
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchWildcards = False
+        .MatchSoundsLike = False
+        .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+    
 End Sub
