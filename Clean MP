@@ -56,7 +56,7 @@ intVar = CInt(p)
 
 
 If c = 1 Or c=3 Then
-Msgbox ("Traitement du corps du texte, cliquez sur "Ok" pour lancer le processus")
+Msgbox ("Traitement du corps du texte, cliquez sur ''Ok'' pour lancer le processus")
 'Traitement du corps du texte
 ActiveDocument.Range.Select
 If p = 2 Then
@@ -492,13 +492,13 @@ Wend
         .MatchAllWordForms = False
     End With
     Selection.Find.Execute Replace:=wdReplaceAll
-    Msgbox ("Fin du traitement du corps du texte, cliquez sur "Ok" pour terminer ou lancer le traitement des notes de bas de page selon votre choix initial")
+    Msgbox ("Fin du traitement du corps du texte, cliquez sur ''Ok'' pour terminer ou lancer le traitement des notes de bas de page selon votre choix initial")
     End if 
     
     
     
     If c = 2 Or c=3 Then
-    Msgbox ("Traitement des notes de bas de page, cliquez sur "Ok" pour lancer le processus")
+    Msgbox ("Traitement des notes de bas de page, cliquez sur ''Ok'' pour lancer le processus")
     'Traitement des notes de bas de page
     Dim xDoc As Document
     Dim xRange As Range
@@ -943,7 +943,7 @@ Wend
         .MatchAllWordForms = False
     End With
     Selection.Find.Execute Replace:=wdReplaceAll
-    Msgbox ("Fin du traitement des notes de bas de page, cliquez sur "Ok" pour terminer.")
+    Msgbox ("Fin du traitement des notes de bas de page, cliquez sur ''Ok'' pour terminer.")
     End If
     
 End Sub
