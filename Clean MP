@@ -88,7 +88,7 @@ With Selection.Find
     .Execute Replace:=wdReplaceAll
 End With
 
- 'Pas d'espace après un guillement ouvrant = insécable après un guillement ouvrant
+ 'Pas d'espace après un guillemet ouvrant = insécable après un guillement ouvrant
 ActiveDocument.Range.Select
 With Selection.Find
     .Text = "«"
@@ -100,11 +100,25 @@ With Selection.Find
 End With
 
 
+
+
+ 'Pas d'espace avant un guillemet fermant = insécable avant un guillement fermant
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = "»"
+    .Replacement.Text = "^s» "
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+
  'Espace avant une parenthèse fermante : pas d'espace avant une parenthèse fermante
 ActiveDocument.Range.Select
 With Selection.Find
     .Text = " )"
-    .Replacement.Text = ")"
+    .Replacement.Text = ") "
     .Forward = True
     .ClearFormatting
     .Wrap = wdFindContinue
@@ -115,7 +129,7 @@ End With
 ActiveDocument.Range.Select
 With Selection.Find
     .Text = "( "
-    .Replacement.Text = "("
+    .Replacement.Text = " ("
     .Forward = True
     .ClearFormatting
     .Wrap = wdFindContinue
@@ -124,11 +138,22 @@ End With
 
 
 
- 'Pas d'espace avant un guillement fermant = insécable avant un guillement fermant
+ 'Espace avant un crochet fermant : pas d'espace avant un crochet fermant 
 ActiveDocument.Range.Select
 With Selection.Find
-    .Text = "»"
-    .Replacement.Text = "^s» "
+    .Text = " ]"
+    .Replacement.Text = "] "
+    .Forward = True
+    .ClearFormatting
+    .Wrap = wdFindContinue
+    .Execute Replace:=wdReplaceAll
+End With
+
+  'Espace après un crochet ouvrant  : pas d'espace un crochet ouvrant
+ActiveDocument.Range.Select
+With Selection.Find
+    .Text = "[ "
+    .Replacement.Text = " ["
     .Forward = True
     .ClearFormatting
     .Wrap = wdFindContinue
