@@ -4,38 +4,28 @@ Selection.HomeKey Unit:=wdStory
 
 'Liste des transformations : 
 'Abréviation de page, standardisation du format p.1 ou p. 1
-
 'Suppression des doubles Espaces
-
 'Espace avant un point = on supprime l'espace
-
 'Espace avant une virgule = on supprime l'espace
-
 'Espace avant deux points = insécable devant deux points
-
 'Espace avant un point virgule = insécable avant un point virgule
-
 'Pas d'espace après un guillemet ouvrant = insécable après un guillement ouvrant
-
 'Pas d'espace avant un guillemet fermant = insécable avant un guillement fermant
-
 'Espace avant une parenthèse fermante : pas d'espace avant une parenthèse fermante
-
 'Espace après une parenthèse ouvrante : pas d'espace après une parenthèse ouvrante
-
 'Espace avant un crochet fermant : pas d'espace avant un crochet fermant 
 'Espace après un crochet ouvrant  : pas d'espace un crochet ouvrant
 'Remplacement des espaces avant les chiffres
- 'Espace avant chiffre 1 = Insécable devant chiffre 1
- 'Espace avant chiffre 2 = Insécable devant chiffre 2
- 'Espace avant chiffre 3 = Insécable devant chiffre 3
- 'Espace avant chiffre 4 = Insécable devant chiffre 4
- 'Espace avant chiffre 5 = Insécable devant chiffre 5
- 'Espace avant chiffre 6 = Insécable devant chiffre 6
- 'Espace avant chiffre 7 = Insécable devant chiffre 7
- 'Espace avant chiffre 8 = Insécable devant chiffre 8
- 'Espace avant chiffre 9 = Insécable devant chiffre 9
- 'Espace avant chiffre 0 = Insécable devant chiffre 0
+   'Espace avant chiffre 1 = Insécable devant chiffre 1
+   'Espace avant chiffre 2 = Insécable devant chiffre 2
+   'Espace avant chiffre 3 = Insécable devant chiffre 3
+   'Espace avant chiffre 4 = Insécable devant chiffre 4
+   'Espace avant chiffre 5 = Insécable devant chiffre 5
+   'Espace avant chiffre 6 = Insécable devant chiffre 6
+   'Espace avant chiffre 7 = Insécable devant chiffre 7
+   'Espace avant chiffre 8 = Insécable devant chiffre 8
+   'Espace avant chiffre 9 = Insécable devant chiffre 9
+   'Espace avant chiffre 0 = Insécable devant chiffre 0
 
 'Espace avant un point d'interrogation = insécable devant un point d'interrogation
 'Espace avant un insécable = insécable simple
