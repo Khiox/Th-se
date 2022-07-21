@@ -2,6 +2,7 @@ Sub MaxiMP()
 Selection.HomeKey Unit:=wdStory
 
 'Je sais que c'est mal codé, c'est vraiment bourrin et "long" mais je prévoit déjà JeanMichel je sais pas l'utiliser, plus c'est bourrin plus ce sera simple de corriger au téléphone sans se prendre le crâne. 
+   'Et accessoirement je vois pas trop comment l'optimiser, c'est à dire qu'à la base je fais du fiscal et 3 tableurs, Word c'est un copain mais pas une passion dévorante. 
 
 'Liste des transformations : 
 'Abréviation de page, standardisation du format p.1 ou p. 1 
